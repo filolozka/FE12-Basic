@@ -8,22 +8,25 @@ for (let i = 0; i < n; i++) {
 }
 console.log('Not sorted array: ' + inputArray);
 
+const resultArray = [];
+
 const outputArray = bubbleSort(inputArray);
 console.log('Sorted array: ' + outputArray);
 console.log('Input array: ' + inputArray);
+
 
 function bubbleSort(arr) {
     let unsorted = true;
     while (unsorted) {
         unsorted = false;
         for (let i = 0; i < arr.length; i++) {
-            if (arr[i] > arr[i + 1]) {
-                let temp = arr[i];
-                arr[i] = arr[i + 1];
-                arr[i + 1] = temp;
+            resultArray[i] = arr[i];
+            if (resultArray[i] > arr[i + 1]) {
+                resultArray[i] = arr[i + 1];
+                resultArray[i + 1] = arr[i];
                 unsorted = true;
             }
         }
     }
-    return arr;
+    return resultArray;
 }
