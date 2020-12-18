@@ -1,4 +1,3 @@
-const token = 'b0fe71f66d6737dc7488ee526cd6a349';
 
 const request = fetch('http://api.openweathermap.org/data/2.5/weather?q=x&units=metrics&mode=json&appid=${token}');
 
