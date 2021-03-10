@@ -1,14 +1,15 @@
 const colors = ['red', 'blue', 'green'];
-
-
-const paragraphs = document.getElementsByTagName('p');
-for (var j = 0; j < paragraphs.length; j++) {
+const createEventHandler = () => {
     let i = 0;
-    paragraphs[j].onclick = function (i) {
-        return function (event) {
-            i = (i + 1) % colors.length;
-            this.style.backgroundColor = colors[i];
-        }
-    }(i);
+    return function() {
+        this.style.backgroundColor = colors[i % colors.length];
+        i++;
+    }
 }
 
+const paragraphs = document.querySelectorAll('p');
+
+paragraphs.forEach(element => {
+        element.onclick = createEventHandler();
+    }
+);
