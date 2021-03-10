@@ -1,5 +1,4 @@
 const colors = ['red', 'blue', 'green'];
-
 const createEventHandler = () => {
     let i = 0;
     return function() {
